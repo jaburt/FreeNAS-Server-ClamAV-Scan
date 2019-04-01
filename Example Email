@@ -1,0 +1,45 @@
+Email Subject: ClamAV Scan started at: 2019-03-31 00:57:12
+
+Email Body:
+
+ClamAV Scan started at: 2019-03-31 00:57:12
+
+ClamAV Scan finished at: 2019-03-31 21:00:46
+
+--------------------------------------
+ClamAV Scan Summary
+--------------------------------------
+Known viruses: 6095372
+Engine version: 0.101.1
+Scanned directories: 32980
+Scanned files: 417449
+Infected files: 14
+Data scanned: 617034.02 MB
+Data read: 2638985.30 MB (ratio 0.23:1)
+Time: 68613.946 sec (1143 m 33 s)
+
+
+--------------------------------------
+freshclam log file
+--------------------------------------
+ClamAV update process started at Sun Mar 31 00:57:01 2019
+WARNING: Your ClamAV installation is OUTDATED!
+WARNING: Local version: 0.101.1 Recommended version: 0.101.2
+DON'T PANIC! Read https://www.clamav.net/documents/upgrading-clamav
+main.cvd is up to date (version: 58, sigs: 4566249, f-level: 60, builder: sigmgr)
+Downloading daily-25400.cdiff [100%]
+Downloading daily-25401.cdiff [100%]
+Downloading daily-25402.cdiff [100%]
+Downloading daily-25403.cdiff [100%]
+Downloading daily-25404.cdiff [100%]
+daily.cld updated (version: 25404, sigs: 1537374, f-level: 63, builder: raynman)
+bytecode.cvd is up to date (version: 328, sigs: 94, f-level: 63, builder: neo)
+Database updated (6103717 signatures) from database.clamav.net (IP: 104.16.219.84)
+WARNING: Clamd was NOT notified: Can't connect to clamd through /var/run/clamav/clamd.sock: No such file or directory
+
+
+--------------------------------------
+clamav log file
+--------------------------------------
+/mnt/Downloads/SysInternals/ZoomIt.exe: Win.Trojan.Midie-6848553-0 FOUND
+/mnt/Downloads/Software/Utilities/SysinternalsSuite.zip: Win.Trojan.Midie-6848553-0 FOUND
