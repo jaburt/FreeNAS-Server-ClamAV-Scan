@@ -16,6 +16,10 @@ Instructions:
  7) The shell script "run_clamav_scan.sh" then connects to the Jail and runs this script.
  8) Once finished, the "run_clamav_scan.sh" script emails a log to the email entered in the variable: "toEmail"
 
+If you get the following error message in the freshclam log, you can ignore it. This is because you are not setting up ClamAV as a daemon (i.e. clamd service) in the Jail, and only using it as an on-demand scanner:
+
+WARNING: Clamd was NOT notified: Can't connect to clamd through /var/run/clamav/clamd.sock: No such file or directory
+
 ClamAV® is an open source (GPL) anti-virus engine used in a variety of situations including email scanning, web scanning,
 and end point security. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command
 line scanner and an advanced tool for automatic database updates.
