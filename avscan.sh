@@ -22,7 +22,7 @@
 
 ### Parameters ###
 ## email address
-toEmail="freenas@jaburt.com"
+toEmail="your@email.address"
 
 ## Top directory of the files/directories you wish to scan, i.e. the "Jail Add Storage" locations
 scriptLocation="/mnt"
