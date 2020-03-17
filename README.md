@@ -28,4 +28,5 @@ https://www.clamav.net/
 UPDATES
 -------
 17 March 2020: Updated run_clamav_scan.sh as FreeNAS v11.3 has moved iocage to /mnt/tank/iocage from /mnt/iocage, which was the location if you manually created iocage jails in v11.1 before using the UI in v11.2.
+
 17 March 2020: Haved hashed out the line : echo "Content-Type: text/html" : in avsacn.sh as there is an issue with FreeNAS v11.3 and sendmail.  With this line enabled the email will not be sent, but if you has (#) it out they are.  For now have just hashed it out, so the email works.
