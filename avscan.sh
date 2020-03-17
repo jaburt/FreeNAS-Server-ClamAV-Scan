@@ -44,7 +44,7 @@ finished=$(date "+ClamAV Scan finished at: %Y-%m-%d %H:%M:%S")
     echo "To: ${toEmail}"
     echo "Subject: ${started}"
     echo "MIME-Version: 1.0"
-    echo "Content-Type: text/html"
+#    echo "Content-Type: text/html"
     echo -e "\\r\\n"
 ) > /tmp/clamavemail.tmp
 
