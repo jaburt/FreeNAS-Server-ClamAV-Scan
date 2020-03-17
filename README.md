@@ -29,4 +29,4 @@ UPDATES
 -------
 17 March 2020: Updated run_clamav_scan.sh as FreeNAS v11.3 has moved iocage to /mnt/tank/iocage from /mnt/iocage, which was the location if you manually created iocage jails in v11.1 before using the UI in v11.2.
 
-17 March 2020: Haved hashed out some lines in avsacn.sh as there is an issue with FreeNAS v11.3 and sendmail.  With these line() enabled the email will not be sent, but if you hash (#) it out they are sent!  For now have just hashed it out, so the email works - sill reenable once the issue is fixed in FreeNAS v11.3-U2 (https://jira.ixsystems.com/browse/NAS-105003).
+17 March 2020: Haved hashed out some lines in avsacn.sh as there is an issue with FreeNAS v11.3 and sendmail.  With these line() enabled the email will not be sent, but if you hash (#) it out they are sent!  For now have just hashed it out, so the email works - will reenable once the issue is fixed in FreeNAS v11.3-U2 (https://jira.ixsystems.com/browse/NAS-105003).
