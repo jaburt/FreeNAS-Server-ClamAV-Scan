@@ -19,9 +19,9 @@ iocage exec "${clamAVJailName}" "${scriptLocation}"avscan.sh
 ## email the log ##
 # hash out the one you ware using: /mnt/tank = warden, /mnt/iocage exec = iocage 
 #sendmail -t < /mnt/tank/Jails/${clamAVJailName}/tmp/clamavemail.tmp
-sendmail -t < /mnt/iocage/jails/${clamAVJailName}/root/tmp/clamavemail.tmp
+sendmail -t < /mnt/tank/iocage/jails/${clamAVJailName}/root/tmp/clamavemail.tmp
 
 ## Delete the log file ##
 # hash out the one you ware using: /mnt/tank = warden, /mnt/iocage exec = iocage
 #rm /mnt/tank/Jails/${clamAVJailName}/tmp/clamavemail.tmp
-rm /mnt/iocage/jails/${clamAVJailName}/root/tmp/clamavemail.tmp
+rm /mnt/tank/iocage/jails/${clamAVJailName}/root/tmp/clamavemail.tmp
