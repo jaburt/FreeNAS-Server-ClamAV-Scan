@@ -1,7 +1,7 @@
 ## Description
 This script will perform a scan of files in the target location, using ClamAV.
-The "target location" is passed as a parameter to the "run_clamav_scan.sh" script,
-i.e. run_clamav_scan.sh "/mnt"
+The "target location" is passed as a parameter to the `run_clamav_scan.sh` script,
+i.e. `run_clamav_scan.sh "/mnt"`
 
 If you do not pass a parameter or the parameter passed doesn't exists as a file
 or directory, the script will email you an invalid parameter alert.
@@ -27,10 +27,10 @@ scanner and an advanced tool for automatic database updates.
 
 ## Updates
 17 March 2020: Updated "run_clamav_scan.sh" as FreeNAS v11.3 has moved iocage to
-"/mnt/tank/iocage" from "/mnt/iocage", which was the location if you manually created
+`/mnt/tank/iocage` from `/mnt/iocage`, which was the location if you manually created
 iocage jails in v11.1 before using the UI in v11.2.
 
-17 March 2020: Have hashed out the [echo "Content-Type: text/html"] lines as there
+17 March 2020: Have hashed out the `echo "Content-Type: text/html"` lines as there
 is an issue with FreeNAS v11.3 and sendmail.  With these line(s) enabled the email
 will not be sent, but if you hash (#) it out they are sent! For now I have just hashed
 it out, so the email works - will re enable once the issue is fixed in FreeNAS v11.3-U2:
@@ -39,29 +39,29 @@ it out, so the email works - will re enable once the issue is fixed in FreeNAS v
 24 March 2020: A complete rewrite to improve and fix some minor issues.
 Have updated it as follows:
 
-	* reduced coding and scripts to now only require a single script to run;
-	* turned all hard-coded log file names into variables;
-	* added in complete setup and usage instructions;
-	* defining 'root' as the default email (so no need to edit this if happy with that);
-	* script now requires a parameter of the target location to scan (with error checking);
-	* simplified the editing requirements for the endusers who are running in warden jails instead of iocage;
-	* the script now supports concurrent runs, by using automatically generated unique files names for the log files.
-	* separated and automated the freshclam update independently from this script, so you can configure how often you want to update the virus definitions.
+* reduced coding and scripts to now only require a single script to run;
+* turned all hard-coded log file names into variables;
+* added in complete setup and usage instructions;
+* defining 'root' as the default email (so no need to edit this if happy with that);
+* script now requires a parameter of the target location to scan (with error checking);
+* simplified the editing requirements for the endusers who are running in warden jails instead of iocage;
+* the script now supports concurrent runs, by using automatically generated unique files names for the log files.
+* separated and automated the freshclam update independently from this script, so you can configure how often you want to update the virus definitions.
 
 ## Usage
 To use this script you need to follow the instructions as below, examples are done
 using iocage commands (just swap to jexec commands if still using warden jails):
 
 1) Creating Jail
- Create a new Jail, I recommend its called "ClamAV".  Don't forget to configure
+ Create a new Jail, I recommend its called `ClamAV`.  Don't forget to configure
  it to auto start on server reboots.  Once created you need to start the Jail:
 ```
 	iocage start ClamAV
 ```
 2) Installing ClamAV (this will take a while)
- You now need to update the Jail and and install ClamAV (using "ports"), once
- finished you can then "exit" the Jail and restart it.  I also recommend you
- install "portmaster" which will make managing updates easier - see (6):
+ You now need to update the Jail and and install ClamAV (using `ports`), once
+ finished you can then `exit` the Jail and restart it.  I also recommend you
+ install `portmaster` which will make managing updates easier - see (6):
 ```
 	iocage console ClamAV
 	pkg update && pkg upgrade -y
@@ -85,8 +85,8 @@ using iocage commands (just swap to jexec commands if still using warden jails):
 	chmod 600 /var/log/clamav/freshclam.log
 	chown clamav /var/log/clamav/freshclam.log
 ```
- You now need to edit the "freshclam.conf" file, which should be found at
- "/usr/local/etc/freshclam.conf".  You will want to edit/check the following
+ You now need to edit the `freshclam.conf` file, which should be found at
+ `/usr/local/etc/freshclam.conf`.  You will want to edit/check the following
  options:
 ```
 	Location of freshclam.log file:
@@ -118,7 +118,7 @@ Once you have configured your mounts you will need to start the Jail again:
 	iocage start ClamAV
 ```
 5) Setup a Tasks -> Cron Jobs on the FreeNAS server to run this script with the
- scan location as a parameter,  i.e. run_clamav_scan.sh "scan target".  This
+ scan location as a parameter,  i.e. `run_clamav_scan.sh "scan target"`.  This
  script does some error checking and then runs the scan - an email will be sent
  upon completion.  You can configure multiple scans with different scan locations
  and start times based on your needs.  The script can now be run concurrently as
@@ -137,6 +137,6 @@ Once you have configured your mounts you will need to start the Jail again:
 	exit
 	iocage restart -s ClamAV
 ```
- The command "portmaster -a" will update all outdated ports within the Jail. If
+ The command `portmaster -a` will update all outdated ports within the Jail. If
  you wish to see which ports would be updated then you can use the command
- "portmaster -L."
+ `portmaster -L`.
