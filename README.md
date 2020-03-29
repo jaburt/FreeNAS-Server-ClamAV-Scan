@@ -53,15 +53,14 @@ To use this script you need to follow the instructions as below, examples are do
 using iocage commands (just swap to jexec commands if still using warden jails):
 
 1) Creating Jail
- Create a new Jail, I recommend its called `ClamAV`.  Don't forget to configure
- it to auto start on server reboots.  Once created you need to start the Jail:
+
+Create a new Jail, I recommend its called `ClamAV`.  Don't forget to configure it to auto start on server reboots.  Once created you need to start the Jail:
 ```
 	iocage start ClamAV
 ```
 2) Installing ClamAV (this will take a while)
- You now need to update the Jail and and install ClamAV (using `ports`), once
- finished you can then `exit` the Jail and restart it.  I also recommend you
- install `portmaster` which will make managing updates easier - see (6):
+
+You now need to update the Jail and and install ClamAV (using `ports`), once finished you can then `exit` the Jail and restart it.  I also recommend you install `portmaster` which will make managing updates easier - see (6):
 ```
 	iocage console ClamAV
 	pkg update && pkg upgrade -y
