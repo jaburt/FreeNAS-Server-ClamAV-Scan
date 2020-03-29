@@ -22,11 +22,11 @@ https://www.shellcheck.net/
 ClamAV® is an open source (GPL) anti-virus engine used in a variety of situations
 including email scanning, web scanning, and end point security. It provides a number
 of utilities including a flexible and scalable multi-threaded daemon, a command line
-scanner and an advanced tool for automatic database updates.
+scanner and an advanced tool for automatic database updates:
 https://www.clamav.net/
 
 ## Updates
-17 March 2020: Updated "run_clamav_scan.sh" as FreeNAS v11.3 has moved iocage to
+17 March 2020: Updated 'run_clamav_scan.sh' as FreeNAS v11.3 has moved iocage to
 `/mnt/tank/iocage` from `/mnt/iocage`, which was the location if you manually created
 iocage jails in v11.1 before using the UI in v11.2.
 
