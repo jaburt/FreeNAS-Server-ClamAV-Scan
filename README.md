@@ -24,8 +24,7 @@ including email scanning, web scanning, and end point security. It provides a nu
 of utilities including a flexible and scalable multi-threaded daemon, a command line
 scanner and an advanced tool for automatic database updates.
 
-Updates
--------
+## Updates
 17 March 2020: Updated "run_clamav_scan.sh" as FreeNAS v11.3 has moved iocage to
 "/mnt/tank/iocage" from "/mnt/iocage", which was the location if you manually created
 iocage jails in v11.1 before using the UI in v11.2.
@@ -48,8 +47,7 @@ Have updated it as follows:
 	* the script now supports concurrent runs, by using automatically generated unique files names for the log files.
 	* separated and automated the freshclam update independently from this script, so you can configure how often you want to update the virus definitions.
 
-Usage
------
+## Usage
 To use this script you need to follow the instructions as below, examples are done
 using iocage commands (just swap to jexec commands if still using warden jails):
 
