@@ -1,0 +1,17 @@
+Email subject: ClamAV Scan - ERROR: Scan Target Location Does Not Exist! "parameter passed"
+
+Email Body:
+
+
+run_clamav_scan.sh script started at: 2020-03-29 14:27:04 and finished at: 2020-03-29 14:27:04
+
+To start a ClamAV scan, you need to pass the location of a valid directory or file, i.e.
+
+run_clamav_scan.sh "/mnt/tank"
+
+Remember: Placing the scan location in "quotes" allows you to scan files/directories which may have spaces in their name.
+Also, the directory or file you wish to scan needs to be mounted (read-only is recommended) within the ClamAV Jail.
+
+------------------------------------------------------------------------------------------------------------------------------
+Please Note: The latest version of this script can be found at: https://www.github.com/jaburt
+------------------------------------------------------------------------------------------------------------------------------
