@@ -68,12 +68,12 @@ using iocage commands (just swap to jexec commands if still using warden jails):
 	pkg update && pkg upgrade -y
 	portsnap fetch
 	portsnap extract
- 	cd /usr/ports/ports-mgmt/portmaster
- 	make install clean
- 	cd /usr/ports/security/clamav
- 	make install clean
- 	exit
- 	iocage restart -s ClamAV
+	cd /usr/ports/ports-mgmt/portmaster
+	make install clean
+	cd /usr/ports/security/clamav
+	make install clean
+	exit
+	iocage restart -s ClamAV
 
 3) Configure freshclam (this updates the virus definition files)
  You can now configure freshclam, freshclam needs to be configured to run as
