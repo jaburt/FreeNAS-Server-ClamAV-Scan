@@ -1,10 +1,8 @@
-Email Subject: ClamAV Scan started at: 2019-03-31 00:57:12
+Email Subject: ClamAV Scan - SUCCESS: "your target location"
 
 Email Body:
 
-ClamAV Scan started at: 2019-03-31 00:57:12
-
-ClamAV Scan finished at: 2019-03-31 21:00:46
+run_clamav_scan.sh script started at: 2020-03-26 00:57:00 and finished at: 2020-03-26 21:45:36
 
 --------------------------------------
 ClamAV Scan Summary
@@ -39,7 +37,7 @@ WARNING: Clamd was NOT notified: Can't connect to clamd through /var/run/clamav/
 
 
 --------------------------------------
-clamav log file
+List of suspicious files found
 --------------------------------------
 /mnt/Downloads/SysInternals/ZoomIt.exe: Win.Trojan.Midie-6848553-0 FOUND
 /mnt/Downloads/Software/Utilities/SysinternalsSuite.zip: Win.Trojan.Midie-6848553-0 FOUND
