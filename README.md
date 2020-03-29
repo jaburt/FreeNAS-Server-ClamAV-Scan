@@ -62,7 +62,7 @@ using iocage commands (just swap to jexec commands if still using warden jails):
 2) Installing ClamAV (this will take a while)
  You now need to update the Jail and and install ClamAV (using "ports"), once
  finished you can then "exit" the Jail and restart it.  I also recommend you
- install "portmaster" which will make managing updates easier - see (6).
+ install "portmaster" which will make managing updates easier - see (6):
 
 	iocage console ClamAV
 	pkg update && pkg upgrade -y
@@ -78,7 +78,7 @@ using iocage commands (just swap to jexec commands if still using warden jails):
 3) Configure freshclam (this updates the virus definition files)
  You can now configure freshclam, freshclam needs to be configured to run as
  a daemon (i.e. always running within the Jail), to automate definition updates,
- based on the amount of updates you want to do each day (default is 12 updates/day).
+ based on the amount of updates you want to do each day (default is 12 updates/day):
 
  	iocage console ClamAV
  	freshclam
