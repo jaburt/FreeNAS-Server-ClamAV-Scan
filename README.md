@@ -1,3 +1,4 @@
+## Description
 This script will perform a scan of files in the target location, using ClamAV.
 The "target location" is passed as a parameter to the "run_clamav_scan.sh" script,
 i.e. run_clamav_scan.sh "/mnt"
@@ -61,7 +62,7 @@ using iocage commands (just swap to jexec commands if still using warden jails):
  You now need to update the Jail and and install ClamAV (using "ports"), once
  finished you can then "exit" the Jail and restart it.  I also recommend you
  install "portmaster" which will make managing updates easier - see (6):
-
+```
 	iocage console ClamAV
 	pkg update && pkg upgrade -y
 	portsnap fetch
@@ -72,7 +73,7 @@ using iocage commands (just swap to jexec commands if still using warden jails):
 	make install clean
 	exit
 	iocage restart -s ClamAV
-
+```
 3) Configure freshclam (this updates the virus definition files)
  You can now configure freshclam, freshclam needs to be configured to run as
  a daemon (i.e. always running within the Jail), to automate definition updates,
