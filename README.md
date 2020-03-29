@@ -42,16 +42,11 @@ Have updated it as follows:
 	* reduced coding and scripts to now only require a single script to run;
 	* turned all hard-coded log file names into variables;
 	* added in complete setup and usage instructions;
-	* defining 'root' as the default email (so no need to edit this if happy
-	  with that);
-	* script now requires a parameter of the target location to scan (with error
-	  checking);
-	* simplified the editing requirements for the endusers who are running in
-	  warden jails instead of iocage;
-	* the script now supports concurrent runs, by using automatically generated
-	  unique files names for the log files.
-	* separated and automated the freshclam update independently from this script,
-	  so you can configure how often you want to update the virus definitions.
+	* defining 'root' as the default email (so no need to edit this if happy with that);
+	* script now requires a parameter of the target location to scan (with error checking);
+	* simplified the editing requirements for the endusers who are running in warden jails instead of iocage;
+	* the script now supports concurrent runs, by using automatically generated unique files names for the log files.
+	* separated and automated the freshclam update independently from this script, so you can configure how often you want to update the virus definitions.
 
 Usage
 -----
