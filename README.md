@@ -110,9 +110,9 @@ the Jail by typing the following commands (this only needs to be done once):
  I recommend you mount them into the /mnt directory and use the same naming scheme
  as your datasets (makes it easier to remember), for example:
 
- (FreeNAS server)								(ClamAV Jail)
- /mnt/tank/Sysadmin		---> mounted to ---->	/mnt/tank/Sysadmin
- /mnt/tank/Documents	---> mounted to ---->	/mnt/tank/Documents
+ 	(FreeNAS server)				(ClamAV Jail)
+ 	/mnt/tank/Sysadmin	---> mounted to ---->	/mnt/tank/Sysadmin
+ 	/mnt/tank/Documents	---> mounted to ---->	/mnt/tank/Documents
 
 Once you have configured your mounts you will need to start the Jail again:
 
