@@ -55,9 +55,9 @@ using iocage commands (just swap to jexec commands if still using warden jails):
 1) Creating Jail
  Create a new Jail, I recommend its called "ClamAV".  Don't forget to configure
  it to auto start on server reboots.  Once created you need to start the Jail:
-
+```
 	iocage start ClamAV
-
+```
 2) Installing ClamAV (this will take a while)
  You now need to update the Jail and and install ClamAV (using "ports"), once
  finished you can then "exit" the Jail and restart it.  I also recommend you
@@ -78,45 +78,45 @@ using iocage commands (just swap to jexec commands if still using warden jails):
  You can now configure freshclam, freshclam needs to be configured to run as
  a daemon (i.e. always running within the Jail), to automate definition updates,
  based on the amount of updates you want to do each day (default is 12 updates/day):
-
+```
  	iocage console ClamAV
  	freshclam
 	touch /var/log/clamav/freshclam.log
 	chmod 600 /var/log/clamav/freshclam.log
 	chown clamav /var/log/clamav/freshclam.log
-
+```
  You now need to edit the "freshclam.conf" file, which should be found at
  "/usr/local/etc/freshclam.conf".  You will want to edit/check the following
  options:
-
+```
 	Location of freshclam.log file:
  		UpdateLogFile /var/log/clamav/freshclam.log
 	Number of checks (for updates) per day (default is 12):
 		Checks amount
-
+```
 You now need to start freshclam as a daemon service, and then exit and stop
 the Jail by typing the following commands (this only needs to be done once):
-
+```
 	sysrc clamav_freshclam_enable="YES"
 	freshclam -d
 	exit
 	iocage stop ClamAV
-
+```
 4) Add the shares (i.e. datasets) you wish to scan by using the Jails -> Mount Points
  feature (I recommend Read-Only mounts).  Remember, if the files/directories are not
  mounted then you will not be able to scan them with this script.
 
  I recommend you mount them into the /mnt directory and use the same naming scheme
  as your datasets (makes it easier to remember), for example:
-
+```
  	(FreeNAS server)				(ClamAV Jail)
  	/mnt/tank/Sysadmin	---> mounted to ---->	/mnt/tank/Sysadmin
  	/mnt/tank/Documents	---> mounted to ---->	/mnt/tank/Documents
-
+```
 Once you have configured your mounts you will need to start the Jail again:
-
+```
 	iocage start ClamAV
-
+```
 5) Setup a Tasks -> Cron Jobs on the FreeNAS server to run this script with the
  scan location as a parameter,  i.e. run_clamav_scan.sh "scan target".  This
  script does some error checking and then runs the scan - an email will be sent
@@ -129,14 +129,14 @@ Once you have configured your mounts you will need to start the Jail again:
  to them. You will see a notification that ClamAV is out-of-date in the email
  you receive via this script.  Therefore to update the ClamAV installation, you
  need to do the following:
-
+```
 	iocage console ClamAV
 	portsnap fetch
 	portsnap update
 	portmaster -a
 	exit
 	iocage restart -s ClamAV
-
+```
  The command "portmaster -a" will update all outdated ports within the Jail. If
  you wish to see which ports would be updated then you can use the command
  "portmaster -L."
