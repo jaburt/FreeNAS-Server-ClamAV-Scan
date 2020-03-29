@@ -52,13 +52,17 @@ Have updated it as follows:
 To use this script you need to follow the instructions as below, examples are done
 using iocage commands (just swap to jexec commands if still using warden jails):
 
-1) Creating A Jail
+1) Editing the script
+
+There are four user-defined fields within the script.  If you are using iocage, and are happy for the email to go to root and using the jail name ClamAV; then there is no need to edit any of them.  Otherwise edit as per the notes in that section of the script.
+
+2) Creating A Jail
 
 Create a new Jail, I recommend its called `ClamAV`.  Don't forget to configure it to auto start on server reboots.  Once created you need to start the Jail:
 ```
 	iocage start ClamAV
 ```
-2) Installing ClamAV (this will take a while)
+3) Installing ClamAV (this will take a while)
 
 You now need to update the Jail and and install ClamAV (using `ports`), once finished you can then `exit` the Jail and restart it.  I also recommend you install `portmaster` which will make managing updates easier - see (6):
 ```
@@ -73,7 +77,7 @@ You now need to update the Jail and and install ClamAV (using `ports`), once fin
 	exit
 	iocage restart -s ClamAV
 ```
-3) Configure freshclam (this updates the virus definition files)
+4) Configure freshclam (this updates the virus definition files)
 
 You can now configure freshclam, freshclam needs to be configured to run as a daemon (i.e. always running within the Jail), to automate definition updates, based on the amount of updates you want to do each day (default is 12 updates/day):
 ```
@@ -97,7 +101,7 @@ You now need to start freshclam as a daemon service, and then exit and stop the 
 	exit
 	iocage stop ClamAV
 ```
-4) Add the shares (i.e. datasets) you wish to scan
+5) Add the shares (i.e. datasets) you wish to scan
 
 Using the Jails -> Mount Points feature (I recommend Read-Only mounts).  Remember, if the files/directories are not mounted then you will not be able to scan them with this script.
 
@@ -111,11 +115,11 @@ Once you have configured your mounts you will need to start the Jail again:
 ```
 	iocage start ClamAV
 ```
-5) Setup a Tasks -> Cron Jobs on the FreeNAS server
+6) Setup a Tasks -> Cron Jobs on the FreeNAS server
 
 Run this script with the scan location as a parameter,  i.e. `run_clamav_scan.sh "scan target"`.  This script does some error checking and then runs the scan - an email will be sent upon completion.  You can configure multiple scans with different scan locations and start times based on your needs.  The script can now be run concurrently as many times as you need!
 
-6) Updating ClamAV
+7) Updating ClamAV
 
 Over time new versions of ClamAV will be released and you will want to upgrade to them. You will see a notification that ClamAV is out-of-date in the email you receive via this script.  Therefore to update the ClamAV installation, you need to do the following:
 ```
