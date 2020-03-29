@@ -38,6 +38,7 @@ it out, so the email works - will re enable once the issue is fixed in FreeNAS v
 
 24 March 2020: A complete rewrite to improve and fix some minor issues.
 Have updated it as follows:
+
 	* reduced coding and scripts to now only require a single script to run;
 	* turned all hard-coded log file names into variables;
 	* added in complete setup and usage instructions;
