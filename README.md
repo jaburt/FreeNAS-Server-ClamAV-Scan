@@ -48,7 +48,7 @@ Have updated it as follows:
 * the script now supports concurrent runs, by using automatically generated unique files names for the log files.
 * separated and automated the freshclam update independently from this script, so you can configure how often you want to update the virus definitions.
 
-02 April 2020: Notice a small mistake on the "sendmail" command, it didn't have the -oi parameter.
+02 April 2020: Noticed a small mistake on the "sendmail" command, it didn't have the -oi parameter.
 
 ## Usage
 To use this script you need to follow the instructions as below, examples are done
