@@ -182,9 +182,9 @@ clamAVJailName="ClamAV"
 your_email=root
 ### End ###
 
-#################################################################
-##### THERE IS NO NEED TO EDIT ANYTHING BEYOUND THIS POIINT #####
-#################################################################
+################################################################
+##### THERE IS NO NEED TO EDIT ANYTHING BEYOUND THIS POINT #####
+################################################################
 
 ### System/Script defined Variables ###
 # To allow concurrent runs of this script, the log files need to have unique names,
