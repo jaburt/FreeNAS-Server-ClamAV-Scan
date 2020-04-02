@@ -56,7 +56,7 @@
 #	  so you can configure how often you want to update the virus definitions.
 #
 # 02 April 2020: Noticed a small mistake on the "sendmail" command, it didn't have
-# the -oi parameter.
+# the -oi parameter.  This "bug" didn't effect the running of the script though.
 ### End ###
 
 ### Usage ###
