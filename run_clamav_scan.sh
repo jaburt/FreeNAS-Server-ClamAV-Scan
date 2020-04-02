@@ -55,7 +55,7 @@
 #	* separated and automated the freshclam update independently from this script,
 #	  so you can configure how often you want to update the virus definitions.
 #
-# 02 April 2020: Notice a small mistake on the "sendmail" command, it didn't have
+# 02 April 2020: Noticed a small mistake on the "sendmail" command, it didn't have
 # the -oi parameter.
 ### End ###
 
