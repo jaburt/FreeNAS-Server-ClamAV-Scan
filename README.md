@@ -1,7 +1,7 @@
 ## Description
 This script will perform a scan of files in the target location, using ClamAV.
 The "target location" is passed as a parameter to the `run_clamav_scan.sh` script,
-i.e. `run_clamav_scan.sh "/mnt"`
+i.e. `run_clamav_scan.sh "/mnt/tank"`
 
 If you do not pass a parameter or the parameter passed doesn't exists as a file
 or directory, the script will email you an invalid parameter alert.
